@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <!-- importing ionic framework-->
+        <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/1.0.0-beta.6/css/ionic.css" rel="stylesheet">
+        <script type="text/javascript" src="send.js"></script>
+        <script type="text/javascript" src="receive.js"></script>
+		<script type="text/javascript" src="lawnchair.min.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+
+<script type="text/javascript">
+
+
+
+
+function save(){
+
+var roomID= document.getElementById("RoomID").value;
+var pass= document.getElementById("Pass").value;
+
+localStorage.setItem('RoomID', roomID);
+localStorage.setItem('Pass', pass);
+
+
+}
+
+function get(){
+
+
+		var quarto = localStorage.getItem('RoomID');
+		var passw = localStorage.getItem('Pass');
+		var temp = localStorage.getItem('temp');
+
+		document.getElementById("RoomID").value = quarto;
+		document.getElementById("Pass").value = passw;
+
+
+}
+
+function remove(){
+
+//localStorage.removeItem('RoomID');
+//localStorage.removeItem('Pass');
+
+
+}
+
+
+
+
+</script>
+
+
+        <title>Adjust Comfort</title>
+    </head>
+    <body onload="get();"> 
+
+        <div class="bar bar-header bar-positive" style="margin-top:5%">
+            <h1 class="title">Comfort adjust</h1>
+        </div>
+        <div class="card" style="margin-top:20%">
+          <div class="item item-text-wrap">
+            Please, insert the ID of the room and the password!
+          </div>
+        </div>
+
+
+
+        <div class="list">
+		  <label class="item item-input">
+		    <span class="input-label">AC ID</span>
+		    <input type="text" id="RoomID">
+		  </label>
+		  <label class="item item-input">
+		    <span class="input-label" >Password</span>
+		    <input type="password" id="Pass">
+		  </label>
+		</div>
+
+			<input type="button"  class="button button-full button-positive" style="width:100%" onclick="save();" value="Submit">
+
+
+       <div class="tabs tabs-icon-top">
+		      <a class="tab-item" href="index.html">
+		        <i class="icon ion-home"></i>
+		        Home
+		      </a>
+		      <a class="tab-item">
+		        <i class="icon ion-star"></i>
+		        Favorites
+		      </a>
+		      <a class="tab-item">
+		        <i class="icon ion-gear-a"></i>
+		        Settings
+		      </a>
+       </div>
+
+
+    </body>
+</html>
