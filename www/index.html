@@ -34,9 +34,12 @@
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
 
         <!--Redirect-->
         <script type="text/javascript">
+
+
 
  function updateTextInput(val) {
       document.getElementById('textInput').value=val; 
@@ -47,7 +50,7 @@ function setValue(){
         var temp = localStorage.getItem('temp');
         document.getElementById("temp").value = temp;
         document.getElementById("textInput").value = temp;
-        
+
 }
        
 
@@ -91,7 +94,6 @@ function setValue(){
 
 
 <a  class="button button-full button-positive" style="width:100%" href="security.html" onclick="save();">Submit </a>
-
 
 
     <div class="tabs tabs-icon-top">
